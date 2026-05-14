@@ -1,0 +1,278 @@
+---
+import { Image } from 'astro:assets';
+
+import dashboardStatistik from '../assets/Dashboard-Simple-Pos-Statistik.png';
+import dashboardUtama from '../assets/Dashboard-Utama-Simpel-POS.png';
+import '../styles/global.css';
+
+const whatsappNumber = '6285103263777';
+const whatsappMessage = encodeURIComponent(
+  'Halo, saya ingin minta preview Simpel POS untuk kebutuhan toko/UMKM saya.'
+);
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+const pageTitle = 'POS untuk UMKM | Simpel POS untuk Pantau Toko Lebih Mudah';
+const pageDescription =
+  'Simpel POS membantu pemilik toko kecil dan UMKM memantau produk, stok, transaksi, keuangan, dan alert reorder dari satu dashboard yang mudah dipahami.';
+
+const stats = [
+  { value: '3', label: 'Total Kategori' },
+  { value: '6', label: 'Total Produk' },
+  { value: '21', label: 'Total Varian' },
+  { value: '11', label: 'Alert Reorder' },
+];
+
+const painPoints = [
+  'Sulit melihat kondisi toko dengan cepat saat data penjualan, stok, dan produk tersebar di banyak tempat.',
+  'Stok menipis sering baru diketahui saat pelanggan sudah ingin membeli barang tersebut.',
+  'Laporan penjualan ada, tetapi belum mudah dibaca sebagai ringkasan bisnis harian.',
+  'Produk terlaris, tren transaksi, dan performa toko tidak langsung terlihat oleh pemilik toko.',
+];
+
+const features = [
+  {
+    title: 'Ringkasan produk & stok',
+    description:
+      'Lihat jumlah kategori, produk, stok, varian, paket aktif, dan alert reorder dari satu tampilan statistik.',
+  },
+  {
+    title: 'Pantauan transaksi',
+    description:
+      'Grafik transaksi membantu pemilik toko membaca aktivitas penjualan tanpa membuka laporan yang rumit.',
+  },
+  {
+    title: 'Ringkasan keuangan',
+    description:
+      'Bagan keuangan membantu memberi gambaran pemasukan dan kondisi usaha secara lebih mudah dipahami.',
+  },
+  {
+    title: 'Alert reorder',
+    description:
+      'Barang yang perlu diperhatikan bisa terlihat lebih cepat, sehingga restock tidak menunggu sampai stok habis.',
+  },
+];
+
+const fitReasons = [
+  'Fokus ke kebutuhan toko kecil, bukan sistem besar yang terasa terlalu rumit.',
+  'Dashboard langsung memberi gambaran kondisi toko dari satu tempat.',
+  'Membantu keputusan harian seperti cek stok, pantau transaksi, dan lihat ringkasan produk.',
+  'Bahasa dan alurnya dibuat sederhana agar mudah dipahami oleh pemilik UMKM.',
+];
+
+const faqs = [
+  {
+    question: 'Apa itu POS untuk UMKM?',
+    answer:
+      'POS untuk UMKM adalah sistem kasir yang membantu pemilik usaha mencatat transaksi, memantau produk, melihat stok, dan membaca ringkasan bisnis dari satu tempat.',
+  },
+  {
+    question: 'Apakah Simpel POS cocok untuk toko kecil?',
+    answer:
+      'Ya. Simpel POS cocok untuk toko kecil yang ingin merapikan penjualan, stok, dan laporan tanpa sistem yang terlalu rumit.',
+  },
+  {
+    question: 'Apa manfaat dashboard Simpel POS?',
+    answer:
+      'Dashboard Simpel POS membantu melihat jumlah produk, kategori, varian, paket aktif, alert reorder, serta grafik transaksi dan keuangan secara cepat.',
+  },
+  {
+    question: 'Apakah saya bisa melihat preview dulu?',
+    answer:
+      'Bisa. Klik tombol Minta Preview via WhatsApp untuk bertanya dan melihat apakah Simpel POS sesuai dengan kebutuhan toko Anda.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content="/Dashboard-Simple-Pos-Statistik.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content="/Dashboard-Simple-Pos-Statistik.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Navigasi utama">
+      <a class="brand" href="#top" aria-label="Simpel POS">
+        <span class="brand-mark">SP</span>
+        <span>Simpel POS</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi halaman">
+        <a href="#fitur">Fitur</a>
+        <a href="#cocok-untuk-umkm">Untuk UMKM</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="header-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+        Minta Preview
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">POS untuk UMKM</p>
+          <h1 id="hero-title">Pantau toko lebih mudah dari satu dashboard Simpel POS.</h1>
+          <p class="hero-description">
+            Simpel POS membantu pemilik toko kecil melihat ringkasan produk, stok,
+            transaksi, keuangan, dan alert reorder tanpa harus membuka laporan yang rumit.
+          </p>
+          <div class="hero-actions" aria-label="Aksi utama">
+            <a class="button button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Minta Preview via WhatsApp
+            </a>
+            <a class="button button-secondary" href="#fitur">Lihat Fitur Dashboard</a>
+          </div>
+          <dl class="hero-stats" aria-label="Contoh statistik dashboard Simpel POS">
+            {stats.map((stat) => (
+              <div>
+                <dt>{stat.value}</dt>
+                <dd>{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <figure class="hero-preview">
+          <Image
+            src={dashboardStatistik}
+            alt="Preview dashboard statistik Simpel POS untuk memantau kategori, produk, stok, varian, paket aktif, alert reorder, dan grafik transaksi."
+            width="1512"
+            height="982"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <figcaption>
+            Preview dashboard statistik yang membantu pemilik UMKM membaca kondisi toko lebih cepat.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section-shell problem-section" aria-labelledby="problem-title">
+        <div class="section-heading">
+          <p class="eyebrow">Masalah pemilik toko</p>
+          <h2 id="problem-title">Saat toko makin ramai, ringkasan bisnis sering sulit dibaca cepat.</h2>
+          <p>
+            Pemilik toko kecil butuh cara praktis untuk melihat apa yang terjadi di toko tanpa harus mengecek banyak menu satu per satu.
+          </p>
+        </div>
+        <div class="problem-grid">
+          {painPoints.map((item, index) => (
+            <article class="problem-card">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <p>{item}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="fitur" class="section-shell feature-section" aria-labelledby="feature-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Fitur dashboard</p>
+          <h2 id="feature-title">Simpel POS merangkum informasi penting toko dalam tampilan yang mudah dipahami.</h2>
+          <p>
+            Dari statistik aplikasi sampai grafik transaksi, dashboard Simpel POS dirancang untuk membantu pemilik UMKM membaca kondisi toko dengan lebih cepat.
+          </p>
+        </div>
+        <div class="feature-grid">
+          {features.map((feature) => (
+            <article class="feature-card">
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="cocok-untuk-umkm" class="section-shell fit-section" aria-labelledby="fit-title">
+        <div class="fit-copy">
+          <p class="eyebrow">Cocok untuk UMKM</p>
+          <h2 id="fit-title">Dibuat untuk pemilik toko yang ingin melihat kondisi usaha tanpa ribet.</h2>
+          <p>
+            Landing page ini fokus pada manfaat praktis: pantau produk, cek stok, lihat transaksi, dan pahami ringkasan toko sebelum meminta preview lebih lanjut.
+          </p>
+          <ul class="check-list">
+            {fitReasons.map((reason) => <li>{reason}</li>)}
+          </ul>
+        </div>
+        <figure class="support-preview">
+          <Image
+            src={dashboardUtama}
+            alt="Tampilan dashboard lengkap Simpel POS dengan ringkasan operasional toko, grafik penjualan, stok menipis, dan produk terlaris."
+            width="1512"
+            height="982"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            Tampilan dashboard lengkap dapat digunakan sebagai bahan preview saat calon pengguna ingin melihat fitur lebih detail.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="faq" class="section-shell faq-section" aria-labelledby="faq-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Pertanyaan umum tentang POS untuk UMKM.</h2>
+          <p>
+            Jawaban singkat untuk membantu pemilik toko memahami manfaat Simpel POS sebelum meminta preview.
+          </p>
+        </div>
+        <div class="faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section class="section-shell final-cta" aria-labelledby="cta-title">
+        <p class="eyebrow">Minta preview</p>
+        <h2 id="cta-title">Ingin lihat apakah Simpel POS cocok untuk toko Anda?</h2>
+        <p>
+          Minta preview lewat WhatsApp dan lihat gambaran dashboardnya terlebih dahulu sebelum memutuskan langkah berikutnya.
+        </p>
+        <a class="button button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+          Minta Preview via WhatsApp
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} Simpel POS. Landing page edukatif untuk POS UMKM.</p>
+      <a href="https://github.com/ryansutrisno/simple-pos-laravel" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </footer>
+  </body>
+</html>
