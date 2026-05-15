@@ -48,7 +48,7 @@ const siteUrl = 'https://simple-pos-landing.vercel.app';
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(currentPath, Astro.site || siteUrl);
 
-const imageSrc = '/Simple-Pos-Thumbnail.png';
+const imageSrc = '/og-image.jpg';
 const ogImageURL = imageSrc.startsWith('http') ? imageSrc : `${siteUrl}${imageSrc}`;
 ---
 
@@ -71,7 +71,7 @@ const ogImageURL = imageSrc.startsWith('http') ? imageSrc : `${siteUrl}${imageSr
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Thumbnail Simpel POS" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalURL} />
