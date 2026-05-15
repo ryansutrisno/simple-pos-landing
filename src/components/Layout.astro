@@ -44,8 +44,12 @@ const faqSchema = {
   })),
 };
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
-const ogImageURL = new URL('/Simple-Pos-Thumbnail.png', Astro.site || Astro.url);
+const siteUrl = 'https://simple-pos-landing.vercel.app';
+const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(currentPath, Astro.site || siteUrl);
+
+const imageSrc = '/Simple-Pos-Thumbnail.png';
+const ogImageURL = imageSrc.startsWith('http') ? imageSrc : `${siteUrl}${imageSrc}`;
 ---
 
 <!doctype html>
