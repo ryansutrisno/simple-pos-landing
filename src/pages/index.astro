@@ -2,12 +2,11 @@
 import { Image } from 'astro:assets';
 
 import dashboardStatistik from '../assets/Dashboard-Simple-Pos-Statistik.png';
-import dashboardUtama from '../assets/Dashboard-Utama-Simpel-POS.png';
 import '../styles/global.css';
 
 const whatsappNumber = '6285103263777';
 const whatsappMessage = encodeURIComponent(
-  'Halo, saya ingin minta preview Simpel POS untuk kebutuhan toko/UMKM saya.'
+  'Halo, saya ingin minta demo Simpel POS untuk kebutuhan toko/UMKM saya.'
 );
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -78,7 +77,7 @@ const faqs = [
   {
     question: 'Apakah saya bisa melihat preview dulu?',
     answer:
-      'Bisa. Klik tombol Minta Preview via WhatsApp untuk bertanya dan melihat apakah Simpel POS sesuai dengan kebutuhan toko Anda.',
+      'Bisa. Klik tombol Minta Demo via WhatsApp untuk bertanya dan melihat apakah Simpel POS sesuai dengan kebutuhan toko Anda.',
   },
 ];
 
@@ -131,7 +130,7 @@ const faqSchema = {
         <a href="#faq">FAQ</a>
       </nav>
       <a class="header-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-        Minta Preview
+        Demo
       </a>
     </header>
 
@@ -224,16 +223,17 @@ const faqSchema = {
           </ul>
         </div>
         <figure class="support-preview">
-          <Image
-            src={dashboardUtama}
-            alt="Tampilan dashboard lengkap Simpel POS dengan ringkasan operasional toko, grafik penjualan, stok menipis, dan produk terlaris."
-            width="1512"
-            height="982"
-            loading="lazy"
-            decoding="async"
-          />
+          <video
+            src="/Preview-Dashboard-Simpel-Pos-Preview.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            aria-label="Video interaktif preview dashboard Simpel POS"
+          ></video>
           <figcaption>
-            Tampilan dashboard lengkap dapat digunakan sebagai bahan preview saat calon pengguna ingin melihat fitur lebih detail.
+            Tampilan dashboard lengkap fitur lebih detail.
           </figcaption>
         </figure>
       </section>
@@ -257,13 +257,13 @@ const faqSchema = {
       </section>
 
       <section class="section-shell final-cta" aria-labelledby="cta-title">
-        <p class="eyebrow">Minta preview</p>
+        <p class="eyebrow">Minta demo</p>
         <h2 id="cta-title">Ingin lihat apakah Simpel POS cocok untuk toko Anda?</h2>
         <p>
-          Minta preview lewat WhatsApp dan lihat gambaran dashboardnya terlebih dahulu sebelum memutuskan langkah berikutnya.
+          Minta demo lewat WhatsApp dan lihat gambaran dashboardnya terlebih dahulu sebelum memutuskan langkah berikutnya.
         </p>
         <a class="button button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-          Minta Preview via WhatsApp
+          Minta Demo via WhatsApp
         </a>
       </section>
     </main>

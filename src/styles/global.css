@@ -38,7 +38,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -116,16 +117,16 @@ a {
 .section-shell {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 2.5rem;
   align-items: center;
   min-height: calc(100vh - 6rem);
-  padding-top: 4rem;
+  padding-top: 2.5rem;
 }
 
 .eyebrow {
@@ -152,9 +153,9 @@ h3 {
 }
 
 h1 {
-  max-width: 12ch;
-  margin-bottom: 1.25rem;
-  font-size: clamp(3.15rem, 8vw, 6.8rem);
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-wrap: balance;
 }
 
 h2 {
@@ -177,13 +178,13 @@ h3 {
 
 .hero-description {
   max-width: 42rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero-actions {
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .button {
@@ -256,7 +257,8 @@ details {
 }
 
 .hero-preview img,
-.support-preview img {
+.support-preview img,
+.support-preview video {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-lg);
   background: var(--surface-strong);
@@ -315,15 +317,16 @@ details p,
 
 .fit-section {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
   align-items: center;
+  min-height: calc(100vh - 6rem);
 }
 
 .check-list {
   display: grid;
-  gap: 0.85rem;
-  margin: 1.5rem 0 0;
+  gap: 0.5rem;
+  margin: 1.25rem 0 0;
   padding: 0;
   list-style: none;
 }
