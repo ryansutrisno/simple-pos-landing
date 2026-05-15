@@ -43,6 +43,9 @@ const faqSchema = {
     },
   })),
 };
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url);
+const ogImageURL = new URL('/Simple-Pos-Thumbnail.png', Astro.site || Astro.url);
 ---
 
 <!doctype html>
@@ -54,17 +57,19 @@ const faqSchema = {
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0f172a" />
-    <link rel="canonical" href="/" />
+    <link rel="canonical" href={canonicalURL} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/Simple-Pos-Thumbnail.png" />
+    <meta property="og:image" content={ogImageURL} />
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/Simple-Pos-Thumbnail.png" />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   </head>
