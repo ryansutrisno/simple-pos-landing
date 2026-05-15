@@ -1,0 +1,76 @@
+---
+const painPoints = [
+  'Sulit melihat kondisi toko dengan cepat saat data penjualan, stok, dan produk tersebar di banyak tempat.',
+  'Stok menipis sering baru diketahui saat pelanggan sudah ingin membeli barang tersebut.',
+  'Laporan penjualan ada, tetapi belum mudah dibaca sebagai ringkasan bisnis harian.',
+  'Produk terlaris, tren transaksi, dan performa toko tidak langsung terlihat oleh pemilik toko.',
+];
+---
+<section class="section-shell problem-section" aria-labelledby="problem-title">
+  <div class="section-heading">
+    <p class="eyebrow">Masalah pemilik toko</p>
+    <h2 id="problem-title">Saat toko makin ramai, ringkasan bisnis sering sulit dibaca cepat.</h2>
+    <p>
+      Pemilik toko kecil butuh cara praktis untuk melihat apa yang terjadi di toko tanpa harus mengecek banyak menu satu per satu.
+    </p>
+  </div>
+  <div class="problem-grid">
+    {painPoints.map((item, index) => (
+      <article class="problem-card">
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <p>{item}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .section-heading {
+    max-width: 760px;
+    margin-bottom: 2rem;
+  }
+
+  .section-heading p {
+    color: var(--muted);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .problem-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: rgba(255, 250, 241, 0.72);
+    padding: 1.25rem;
+  }
+
+  .problem-card span {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    color: var(--brand-strong);
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+
+  .problem-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .problem-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .problem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

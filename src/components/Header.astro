@@ -1,0 +1,103 @@
+---
+import { whatsappUrl } from '../utils/constants';
+---
+<header class="site-header" aria-label="Navigasi utama">
+  <a class="brand" href="#top" aria-label="Simpel POS">
+    <span class="brand-mark">SP</span>
+    <span>Simpel POS</span>
+  </a>
+  <nav class="nav-links" aria-label="Navigasi halaman">
+    <a href="#fitur">Fitur</a>
+    <a href="#cocok-untuk-umkm">Untuk UMKM</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="header-cta" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+    Demo
+  </a>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: min(1120px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 250, 241, 0.88);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(31, 25, 17, 0.08);
+  }
+
+  .brand,
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand {
+    gap: 0.625rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .brand-mark {
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--surface);
+    font-size: 0.78rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+    color: var(--muted);
+    font-size: 0.925rem;
+    font-weight: 650;
+  }
+
+  .nav-links a:hover {
+    color: var(--brand-strong);
+  }
+
+  .header-cta {
+    border-radius: 999px;
+    background: var(--brand);
+    color: white;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .header-cta:hover {
+    transform: translateY(-1px);
+    background: var(--brand-strong);
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-header {
+      width: calc(100% - 1rem);
+      margin-top: 0.5rem;
+      border-radius: var(--radius-md);
+    }
+
+    .header-cta {
+      display: none;
+    }
+  }
+</style>

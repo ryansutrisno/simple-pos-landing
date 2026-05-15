@@ -1,0 +1,49 @@
+---
+import { whatsappUrl } from '../utils/constants';
+---
+<section class="section-shell final-cta" aria-labelledby="cta-title">
+  <p class="eyebrow">Minta demo</p>
+  <h2 id="cta-title">Ingin lihat apakah Simpel POS cocok untuk toko Anda?</h2>
+  <p>
+    Minta demo lewat WhatsApp dan lihat gambaran dashboardnya terlebih dahulu sebelum memutuskan langkah berikutnya.
+  </p>
+  <a class="button button-primary" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+    Minta Demo via WhatsApp
+  </a>
+</section>
+
+<style>
+  .final-cta {
+    max-width: 900px;
+    margin-bottom: 4rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at top right, rgba(245, 158, 11, 0.22), transparent 22rem),
+      linear-gradient(135deg, #111827 0%, #0f766e 100%);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .final-cta .eyebrow,
+  .final-cta p {
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .final-cta p {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+  }
+
+  .final-cta .button-primary {
+    background: white;
+    color: var(--brand-strong);
+  }
+
+  @media (max-width: 640px) {
+    .final-cta {
+      padding: 2rem 1.25rem;
+    }
+  }
+</style>

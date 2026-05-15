@@ -234,6 +234,7 @@ Hal yang tidak dikejar pada versi awal landing page:
 | Perbaikan proporsi & layout Hero | Membalik grid menjadi 1.1fr (teks) vs 0.9fr (gambar) & merampingkan font/margin | Agar seluruh elemen hero (CTA, tombol, card kecil) masuk dalam satu viewport desktop tanpa perlu scroll ke bawah (above the fold). |
 | Preview bagian "Cocok untuk UMKM" | Menggunakan video MP4 (autoplay, muted, loop) sebagai ganti screenshot statis penuh | Lebih ringkas secara vertikal dan lebih interaktif (animasi) untuk memamerkan produk tanpa memberatkan halaman (preload metadata). |
 | Perbaikan Layout "Cocok untuk UMKM" | Membalik grid ke 1.1fr vs 0.9fr dan menambah min-height viewport | Konsistensi dengan bagian Hero agar seluruh konten fit di satu layar (above the fold) tanpa butuh scroll vertikal. |
+| Refactoring Komponen & CSS Scoping | Memecah `index.astro` dan `global.css` ke beberapa file komponen mandiri (`src/components/`) | Membuat kode jauh lebih terstruktur, mudah di-maintain, dan meniru best practice Astro dengan style scoped per section. |
 ## 9. Asumsi Final
 
 - Versi awal landing page cukup satu halaman.

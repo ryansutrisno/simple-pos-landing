@@ -1,0 +1,74 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const faqs = [
+  {
+    question: 'Apa itu POS untuk UMKM?',
+    answer:
+      'POS untuk UMKM adalah sistem kasir yang membantu pemilik usaha mencatat transaksi, memantau produk, melihat stok, dan membaca ringkasan bisnis dari satu tempat.',
+  },
+  {
+    question: 'Apakah Simpel POS cocok untuk toko kecil?',
+    answer:
+      'Ya. Simpel POS cocok untuk toko kecil yang ingin merapikan penjualan, stok, dan laporan tanpa sistem yang terlalu rumit.',
+  },
+  {
+    question: 'Apa manfaat dashboard Simpel POS?',
+    answer:
+      'Dashboard Simpel POS membantu melihat jumlah produk, kategori, varian, paket aktif, alert reorder, serta grafik transaksi dan keuangan secara cepat.',
+  },
+  {
+    question: 'Apakah saya bisa melihat demo dulu?',
+    answer:
+      'Bisa. Klik tombol Minta Demo via WhatsApp untuk bertanya dan melihat apakah Simpel POS sesuai dengan kebutuhan toko Anda.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/Dashboard-Simple-Pos-Statistik.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/Dashboard-Simple-Pos-Statistik.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,88 @@
+---
+const features = [
+  {
+    title: 'Ringkasan produk & stok',
+    description:
+      'Lihat jumlah kategori, produk, stok, varian, paket aktif, dan alert reorder dari satu tampilan statistik.',
+  },
+  {
+    title: 'Pantauan transaksi',
+    description:
+      'Grafik transaksi membantu pemilik toko membaca aktivitas penjualan tanpa membuka laporan yang rumit.',
+  },
+  {
+    title: 'Ringkasan keuangan',
+    description:
+      'Bagan keuangan membantu memberi gambaran pemasukan dan kondisi usaha secara lebih mudah dipahami.',
+  },
+  {
+    title: 'Alert reorder',
+    description:
+      'Barang yang perlu diperhatikan bisa terlihat lebih cepat, sehingga restock tidak menunggu sampai stok habis.',
+  },
+];
+---
+<section id="fitur" class="section-shell feature-section" aria-labelledby="feature-title">
+  <div class="section-heading compact">
+    <p class="eyebrow">Fitur dashboard</p>
+    <h2 id="feature-title">Simpel POS merangkum informasi penting toko dalam tampilan yang mudah dipahami.</h2>
+    <p>
+      Dari statistik aplikasi sampai grafik transaksi, dashboard Simpel POS dirancang untuk membantu pemilik UMKM membaca kondisi toko dengan lebih cepat.
+    </p>
+  </div>
+  <div class="feature-grid">
+    {features.map((feature) => (
+      <article class="feature-card">
+        <h3>{feature.title}</h3>
+        <p>{feature.description}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .section-heading {
+    max-width: 760px;
+    margin-bottom: 2rem;
+  }
+
+  .section-heading.compact {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .section-heading p {
+    color: var(--muted);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--surface-strong);
+    padding: 1.25rem;
+  }
+
+  .feature-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .feature-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
